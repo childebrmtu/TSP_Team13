@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class obstaclehandler : MonoBehaviour
+public class obstacle_handler : MonoBehaviour
 {
 
     public float scroll_speed = (float)-0.001;

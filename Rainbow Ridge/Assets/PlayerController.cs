@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private PlayerInput input;
     private Rigidbody2D control;
     // placeholder for now
-    private float speedFactor = 10000;
+    public float speedFactor = 1;
 
     // Start is called before the first frame update
     void Start()

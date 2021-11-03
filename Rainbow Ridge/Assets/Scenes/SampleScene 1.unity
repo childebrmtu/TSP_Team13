@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb96ba09d0663f49b8cdb9308b650e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rick: {fileID: 0}
+  rick: {fileID: 6070470192025483328, guid: 0d7084f2bc12e004d9d4f1245299b456, type: 3}
   upper_bound: 2
 --- !u!1 &519420028
 GameObject:

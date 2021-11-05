@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector2 inVector = input.actions["Move"].ReadValue<Vector2>();
         inVector.x *= Time.deltaTime * speedFactor;

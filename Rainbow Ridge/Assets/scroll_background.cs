@@ -5,7 +5,7 @@ using UnityEngine;
 public class scroll_background : MonoBehaviour
 {
 
-    public float scroll_speed = (float) -0.001;
+    public float scroll_speed = (float) -0.01;
 
     // Start is called before the first frame update
     void Start()
@@ -14,13 +14,13 @@ public class scroll_background : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (transform.position.y < (float) -5)
         {
             transform.position = new Vector3(0, 5, 0);
         }
-            
+        
         transform.position += new Vector3(0, scroll_speed, 0);
     }
 }

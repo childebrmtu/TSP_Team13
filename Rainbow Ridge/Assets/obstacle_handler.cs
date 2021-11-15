@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class obstacle_handler : MonoBehaviour
 {
-
-    public float scroll_speed = (float)-0.01;
+    public Environment env;
     public float despawn_boundary = (float)-2.0;
 
     // Start is called before the first frame update
@@ -19,7 +18,7 @@ public class obstacle_handler : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            child.transform.position += new Vector3(0, scroll_speed, 0);
+            child.transform.position += new Vector3(0, -env.GetScrollSpeed(), 0);
 
             if (child.transform.position.y < despawn_boundary)
             {

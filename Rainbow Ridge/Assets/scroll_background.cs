@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class scroll_background : MonoBehaviour
 {
-
-    public float scroll_speed = (float) -0.01;
+    [SerializeField]
+    private Environment env;
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +16,12 @@ public class scroll_background : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-        if (transform.position.y < (float) -1.01)
+
+        if (transform.position.y < (float)-1.01)
         {
-            transform.position += new Vector3(0, (float) 1.01, 0);
+            transform.position += new Vector3(0, (float)1.01, 0);
         }
-        
-        transform.position += new Vector3(0, scroll_speed, 0);
+
+        transform.position += new Vector3(0, -env.GetScrollSpeed(), 0);
     }
 }

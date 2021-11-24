@@ -11,6 +11,7 @@ public class Environment : MonoBehaviour
     [SerializeField] private float LowerBound;
     // the speed at which the background and obstacles scroll downward
     [SerializeField] private float ScrollSpeed;
+    [SerializeField] private float ScrollSpeedGrowthRate;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,10 @@ public class Environment : MonoBehaviour
         {
             Debug.LogError("ScrollSpeed must be given a positive value.");
         }
+        if (!(ScrollSpeedGrowthRate > 0f))
+        {
+            Debug.LogError("ScrollSpeedGrowthRate must be given a positive value.");
+        }
     }
 
     public float GetScrollSpeed()
@@ -43,9 +48,19 @@ public class Environment : MonoBehaviour
         return ScrollSpeed;
     }
 
+    public float GetLowerBound()
+    {
+        return LowerBound;
+    }
+
+    public float GetUpperBound()
+    {
+        return UpperBound;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        ScrollSpeed = ScrollSpeed * 1.005f;
+        ScrollSpeed = (float)System.Math.Exp( System.Math.Log(ScrollSpeed) + ScrollSpeedGrowthRate);
     }
 }

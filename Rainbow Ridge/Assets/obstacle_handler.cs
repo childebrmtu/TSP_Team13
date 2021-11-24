@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class obstacle_handler : MonoBehaviour
 {
-    public Environment env;
-    public float despawn_boundary = (float)-2.0;
+    [SerializeField]
+    private Environment env;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class obstacle_handler : MonoBehaviour
         {
             child.transform.position += new Vector3(0, -env.GetScrollSpeed(), 0);
 
-            if (child.transform.position.y < despawn_boundary)
+            if (child.transform.position.y < env.GetLowerBound())
             {
                 Destroy(child.gameObject);
             }

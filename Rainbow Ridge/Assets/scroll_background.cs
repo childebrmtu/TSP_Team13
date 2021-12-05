@@ -16,10 +16,9 @@ public class scroll_background : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-        if (transform.position.y < (float) -1.01)
+        if (transform.position.y < (float) -5)
         {
-            transform.position += new Vector3(0, (float) 1.01, 0);
+            transform.position = new Vector3(0, 5, 0);
         }
         
         transform.position += new Vector3(0, scroll_speed, 0);

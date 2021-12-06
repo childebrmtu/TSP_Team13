@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class spawn_rick : MonoBehaviour
 {
-    public Transform rick;
-    public float upper_bound = (float) 2.0;
-    public float spawn_range = (float) 0.75;
-    public float spawn_period = (float) 2.0;
+    [SerializeField]
+    private Transform[] prefabs;
+    [SerializeField]
+    private Environment env;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("spawn", (float)0.0, spawn_period);
+        InvokeRepeating("spawn", (float)0.0, (float)2.0);
     }
 
     void spawn()
     {
-        float x_pos = Random.Range(-spawn_range, spawn_range);
-        Transform rick_instance = (Transform)Instantiate(rick, new Vector3( x_pos, upper_bound, -0.1f), Quaternion.Euler(0, 0, 0));
+        float x_pos = Random.Range(-0.75f, 0.75f);
+        Transform my_prefab = prefabs[Random.Range(0, prefabs.Length)];
+        Transform rick_instance = (Transform)Instantiate(my_prefab, new Vector3( x_pos, env.GetUpperBound(), -0.1f), Quaternion.Euler(0, 0, 0));
         rick_instance.parent = this.transform;
     }
 

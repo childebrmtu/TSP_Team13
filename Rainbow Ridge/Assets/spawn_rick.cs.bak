@@ -12,7 +12,7 @@ public class spawn_rick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("spawn", (float)0.0, (float)4.0);
+        InvokeRepeating("spawn", (float)0.0, (float)2.0);
     }
 
     void spawn()
